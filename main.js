@@ -27,10 +27,17 @@ form.addEventListener('submit', e => {
 
     result.classList.remove('d-none')
     console.log(nameInput.value)
-    result.querySelector('.you').innerHTML  = `${nameInput}`
-    result.querySelector('.resultOutput').textContent = `${score}%`
+    result.querySelector('.you').textContent  = `${nameInput}`
+    // result.querySelector('.resultOutput').textContent = `${score}%`
     
-
+    let output = 0;
+    const timer = setInterval(() => {
+        result.querySelector('.resultOutput').textContent = `${output}%`
+        if (output === score) {
+            clearInterval(timer)
+        } else{
+            output++
+        }
+    }, 10);
+})
     
-
-});
