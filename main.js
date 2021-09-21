@@ -1,7 +1,7 @@
 const correctAnswers = ['A', 'B', 'A', 'B'];
 const form = document.querySelector('.quiz-form');
 const result = document.querySelector('.result')
-const nameInput = document.querySelector('input')
+const nameInput = document.querySelector('.userName')
 
 
 
@@ -26,8 +26,8 @@ form.addEventListener('submit', e => {
     console.log(score)
 
     result.classList.remove('d-none')
-    console.log(nameInput.value)
-    result.querySelector('.you').textContent  = `${nameInput}`
+    console.log(nameInput)
+    result.querySelector('.you').textContent  = `${nameInput.value}`
     // result.querySelector('.resultOutput').textContent = `${score}%`
     
     let output = 0;
